@@ -13,12 +13,12 @@ public class TerrainEditor : Editor
         {
             if (gen.autoUpdate)
             {
-                gen.GenerateMap();
+                gen.GenerateMesh();
             }
         }
         if (GUILayout.Button("Generate"))
         {
-            gen.GenerateMap();
+            gen.GenerateMesh();
         }
     }
 }
