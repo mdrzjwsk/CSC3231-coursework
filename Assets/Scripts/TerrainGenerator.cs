@@ -12,8 +12,8 @@ public class TerrainGenerator : MonoBehaviour
     private int[] triangles;
     Color[] colors;
 
-    public int xSize;
-    public int zSize;
+    public int width;
+    public int height;
 
     public float scale;
     public int octaves;
@@ -62,11 +62,11 @@ public class TerrainGenerator : MonoBehaviour
         if (scale <= 0)
             scale = 0.0001f;
 
-        vertices = new Vector3[(xSize + 1) * (zSize + 1)];
+        vertices = new Vector3[(width + 1) * (height + 1)];
 
-        for (int i = 0, z = 0; z <= zSize; z++)
+        for (int i = 0, z = 0; z <= height; z++)
         {
-            for (int x = 0; x <= xSize; x++)
+            for (int x = 0; x <= width; x++)
             {
                 float noiseHeight = GenerateNoiseHeight(z, x, octaveOffsets);
                 //making sure the vertices near mesh edges are flat
@@ -135,20 +135,20 @@ public class TerrainGenerator : MonoBehaviour
 
     private void CreateTriangles()
     {
-        triangles = new int[xSize * zSize * 6];
+        triangles = new int[width * height * 6];
         int vert = 0;
         int tris = 0;
 
-        for (int z = 0; z < xSize; z++)
+        for (int z = 0; z < height; z++)
         {
-            for (int x = 0; x < xSize; x++)
+            for (int x = 0; x < width; x++)
             {
                 triangles[tris + 0] = vert + 0;
-                triangles[tris + 1] = vert + xSize + 1;
+                triangles[tris + 1] = vert + width+ 1;
                 triangles[tris + 2] = vert + 1;
                 triangles[tris + 3] = vert + 1;
-                triangles[tris + 4] = vert + xSize + 1;
-                triangles[tris + 5] = vert + xSize + 2;
+                triangles[tris + 4] = vert +width + 1;
+                triangles[tris + 5] = vert + width + 2;
 
                 vert++;
                 tris += 6;
@@ -156,9 +156,9 @@ public class TerrainGenerator : MonoBehaviour
             vert++;
         }
         colors = new Color[vertices.Length];
-        for (int i = 0, z = 0; z < xSize; z++)
+        for (int i = 0, z = 0; z < height; z++)
         {
-            for (int x = 0; x < xSize; x++)
+            for (int x = 0; x < width; x++)
             {
                 float vertexHeight = Mathf.InverseLerp(minHeight, maxHeight, vertices[i].y);
                 colors[i] = gradient.Evaluate(vertexHeight);
@@ -177,7 +177,7 @@ public class TerrainGenerator : MonoBehaviour
 
         for (int i = 0; i < uvs.Length; i++)
         {
-            uvs[i] = new Vector2((float)vertices[i].x / xSize, (float)vertices[i].z/zSize);
+            uvs[i] = new Vector2((float)vertices[i].x / width, (float)vertices[i].z/height);
         }
         mesh.uv = uvs;
 
