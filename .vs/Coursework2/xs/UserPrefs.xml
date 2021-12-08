@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{1AC3A4CD-558C-0839-C587-CD26CD995CB4}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CameraMovement.cs">
+    <Files>
+      <File FileName="Assets/Scripts/TerrainGenerator.cs" Line="40" Column="29" />
+      <File FileName="Assets/Scripts/Rotate.cs" />
+      <File FileName="Assets/Scripts/MemoryInformation.cs" Line="30" Column="72" />
+      <File FileName="Assets/Scripts/DayNighCycle/LightingManager.cs" />
+      <File FileName="Assets/Scripts/CameraMovement.cs" Line="37" Column="9" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Coursework2" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="DayNighCycle" expanded="True" />
+                <Node name="TerrainGenerator.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b8585c59-fdff-4249-832f-8ed9a76abec6" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
