@@ -39,14 +39,14 @@ public class TerrainGenerator : MonoBehaviour
     static int treeNum = 200;
     List<Vector3> positionsList = new List<Vector3>();
 
-    public void GenerateMap()
+    public void GenerateMesh()
     {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
-        CreateNewMap();
+        CreateMesh();
     }
 
-    public void CreateNewMap()
+    public void CreateMesh()
     {
         CreateMeshShape();
         CreateTriangles();
